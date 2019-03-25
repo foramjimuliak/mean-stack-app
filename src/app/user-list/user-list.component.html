@@ -1,0 +1,21 @@
+<div class="card">
+  	<div class="card-body">
+      	<div class="form-group">
+        	<input type="text" (input)="onSearchChange($event.target.value)" class="form-control" placeholder="search text goes here">
+      	</div>
+    	<table class="table table-striped">
+        	<thead>
+            	<tr>
+                	<td>#</td>
+                	<td>Username</td>
+            	</tr>
+          	</thead>
+          	<tbody>
+            	<tr *ngFor="let user of users; let i = index">
+                	<td>{{ i+1 }}</td>
+                	<td>{{ user.username }}</td>
+              	</tr>
+          	</tbody>
+      	</table>
+  	</div>
+</div>
