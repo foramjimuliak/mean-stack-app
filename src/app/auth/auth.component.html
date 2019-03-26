@@ -1,7 +1,8 @@
 <div class="container">
-    <h2>Login</h2>
     <div class="row">
-        <div class="col-md-6">
+        <div class="absolute-Center is-responsive">
+            <span style="color:red" *ngIf= "error">Username or Password is invalid</span>
+            <h2>Login</h2>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="username">Username</label>

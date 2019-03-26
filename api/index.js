@@ -1,11 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
-const cors = require('cors');
-
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
@@ -29,7 +28,6 @@ app.use(bodyParser.json())
 app.use(cors());
 
 require('./app/route/user.route.js')(app);
-
 
 // listen for requests
 app.listen(3000, () => {

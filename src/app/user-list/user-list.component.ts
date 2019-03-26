@@ -3,7 +3,6 @@ import User from '../model/User';
 import { UserService } from '../service/user.service';
 import { AuthService } from '../service/auth.service';
 
-
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -17,13 +16,11 @@ export class UserListComponent implements OnInit {
     constructor(private userService: UserService,private authService: AuthService ) { }
 
     ngOnInit() {
-
         //get list of all users oninit
         this.getUsers('');
     }
 
     onSearchChange(user){
-
         //get list of users that starts with search term 
         this.getUsers(user);
     }
@@ -39,7 +36,10 @@ export class UserListComponent implements OnInit {
             this.users = data;
         });
     }
-
+    
+    /**
+    * @method Logout
+    */
     logout() {
         this.authService.logout();
     }

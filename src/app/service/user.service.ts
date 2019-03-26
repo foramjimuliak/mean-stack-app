@@ -16,14 +16,11 @@ export class UserService {
 
     //service to get list of users that starts with searchField
     getUsers(searchField: string) {
-        
         let headers = new HttpHeaders({
             'Content-Type': 'application/json',
             'Authorization': 'Bearer '+ this.currentUser
         });
-
         let options = { headers: headers };
-
         return this.http.post<any>(this.url + `api/search`, { searchField : searchField },{headers: headers})
         .pipe(map(user => {
             return user;
