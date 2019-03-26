@@ -1,27 +1,25 @@
-# MeanStackApp
+# Modern Web Application using MEAN stack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+This is a user search application for the MEAN stack ([MongoDB](https://www.mongodb.org/), [Express](http://expressjs.com/), [AngularJS](https://angularjs.org/) and [Node.js](https://nodejs.org))
 
-## Development server
+#### Features
+- MVC project structure
+- User list and user search
+- Authentication with username/password
+- Protected routes that can only be accessed by authenticated users
+- Bootstrap CSS framework
+- [Mongoose](https://github.com/Automattic/mongoose) for MongoDB interactions.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Application Requirements
+- [Node.js (version 8.x or 10.x.)& NPM](https://nodejs.org/en/download/)
+- [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Getting Started
+##### Local Application Development
+1. Clone or download this repo onto your machine.
+2. Install [application requirements](#application-requirements) if not done so already.
+3. Open application directory in your terminal and run `npm install`
+4. Go to api folder and run `npm install`
+5. Run `ng serve --o` on root folder to start angular app
+6. Run `node server.js` to start your node server
+7. Open a browser to the link provided in the terminal prompt to view your app
