@@ -9,4 +9,10 @@ module.exports = (app) => {
     */
     app.post('/api/search',users.search);
 
+    /**
+    * @api {post} /api/auth Authenticate user
+    * @apiName Login user
+    */
+   app.post('/api/auth',users.login);
+
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import User from '../model/User';
 import { UserService } from '../service/user.service';
+import { AuthService } from '../service/auth.service';
+
 
 @Component({
   selector: 'app-user-list',
@@ -12,7 +14,7 @@ export class UserListComponent implements OnInit {
 
     users: User[];
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService,private authService: AuthService ) { }
 
     ngOnInit() {
 
@@ -36,5 +38,9 @@ export class UserListComponent implements OnInit {
         .subscribe((data: User[]) => {
             this.users = data;
         });
+    }
+
+    logout() {
+        this.authService.logout();
     }
 }
