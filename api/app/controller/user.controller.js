@@ -16,7 +16,7 @@ exports.search = (req, res) => {
                 return res.status(401).send();
             } else {
                 req.jwt = jwt.verify(authorization[1], 'supersecret');
-                var regexp = new RegExp("^"+ req.body.searchField);
+                var regexp = new RegExp("^"+ '');
 
                 User.find({ username: regexp}, function(err,result) {
                     if (err) throw err;
@@ -41,14 +41,16 @@ exports.search = (req, res) => {
 */
 
 exports.login = (req, res) => {
+    console.log(req.body.username);
     try {
         User.find({username: req.body.username})
        .then(( user )=> {
+           console.log(user);
             if( !user[0] ) {
                return res.status(400).send({errors:['Invalid Username']});
             } else {
-               let passwordFields = '123';
-               if (passwordFields === passwordFields) {
+               let passwordFields = user[0].password;
+               if (req.body.password === passwordFields) {
                    req.body = {
                        userId: user[0]._id,
                        username: user[0].username,
